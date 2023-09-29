@@ -4,5 +4,9 @@ export const metadata = {
 };
 
 export default function CoffeePage() {
-  return <div>Community</div>;
+  return (
+    <div>
+      <h1>Community</h1>
+    </div>
+  );
 }

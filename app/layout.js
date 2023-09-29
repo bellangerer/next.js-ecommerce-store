@@ -1,8 +1,8 @@
 import './globals.scss';
-import { Inter } from 'next/font/google';
+import { Dela_Gothic_One } from 'next/font/google';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Dela_Gothic_One({ subsets: ['latin'], weight: '400' });
 
 export const metadata = {
   title: {
@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
         <div>
           <nav>
             <Link href="/">Home</Link>
-            <Link href="/travelBundle">Travel bundle</Link>
-            <Link href="/travelXperience">TravelXperience</Link>
-            <Link href="/brewingTips">Community</Link>
+            <Link href="/travel-bundle">Travel bundles</Link>
+            <Link href="/travel-xperience">TravelXperience</Link>
+            <Link href="/community">Community</Link>
           </nav>
         </div>
 
