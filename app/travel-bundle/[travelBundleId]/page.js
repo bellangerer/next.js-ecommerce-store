@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getTravelBundle } from '../../../database/travel-bundles';
+import AddToCartButton from '../../AddToCartButton';
 
 export async function generateMetadata({ params }) {
   const singleTravelBundle = await getTravelBundle(
-    Number(params.travelBundlesId),
+    Number(params.travelBundleId),
   );
 
   return {
@@ -14,7 +16,7 @@ export async function generateMetadata({ params }) {
 
 export default async function TravelBundlePage(props) {
   const singleTravelBundle = await getTravelBundle(
-    Number(props.params.travelBundlesId),
+    Number(props.params.travelBundleId), // props.params hold information about my products
   );
 
   if (!singleTravelBundle) {
@@ -23,16 +25,20 @@ export default async function TravelBundlePage(props) {
 
   return (
     <div>
-      This is a single animal page
+      This is the single product page
       <h1>{singleTravelBundle.travelDestination}</h1>
-      <Image
-        src={`/images/${singleTravelBundle.travelDestination}.png`}
-        width={200}
-        height={200}
-        alt={singleTravelBundle.travelDestination}
-      />
-      this is a {singleTravelBundle.type} carrying{' '}
-      {singleTravelBundle.accessory}
+      <div>
+        <Image
+          src={`/images/${singleTravelBundle.travelDestination}.jpeg`}
+          width={200}
+          height={200}
+          alt={singleTravelBundle.travelDestination}
+        />
+        {singleTravelBundle.info} {singleTravelBundle.accessory} on a different
+        perspective
+        <AddToCartButton />
+      </div>
     </div>
   );
 }
+// add to cart!!

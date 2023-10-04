@@ -26,6 +26,11 @@ body {
   }
   > div a {
     margin: 30px;
+    align-items: center;
+  }
+
+  > main image {
+    box-sizing: content-box;
   }
 
   box-sizing: border-box;

@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/no-unresolved
-import { getCookie } from '../../util/cookies';
-import SetCookieForm from './SetCookies';
+import { getCookie } from '../util/cookies';
+import SetCookieForm from './SetCookieForm';
 
 export default function SetCookiePage() {
-  const getCookieValue = getCookie('testCookie');
+  const getCookieValue = getCookie('travelCookie');
 
   return (
     <>

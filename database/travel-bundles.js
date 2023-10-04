@@ -15,3 +15,5 @@ export function getTravelBundles() {
 export function getTravelBundle(id) {
   return travelBundles.find((travelBundle) => travelBundle.id === id);
 }
+
+// preis, info etc.
