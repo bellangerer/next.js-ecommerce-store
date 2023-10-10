@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getTravelBundle } from '../../../database/travel-bundles';
-import AddToCartButton from '../../AddToCartButton';
+import { getTravelBundleById } from '../../../database/travel-bundles';
+import { AddProductToCart } from './AddToCart';
 
 export async function generateMetadata({ params }) {
-  const singleTravelBundle = await getTravelBundle(
+  const singleTravelBundle = await getTravelBundleById(
     Number(params.travelBundleId),
   );
 
@@ -15,10 +14,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function TravelBundlePage(props) {
-  const singleTravelBundle = await getTravelBundle(
-    Number(props.params.travelBundleId), // props.params hold information about my products
+  const singleTravelBundle = await getTravelBundleById(
+    Number(props.params.travelBundleId),
   );
 
+  console.log(
+    'singleTravelBundle.travelDestination',
+    singleTravelBundle.travelDestination,
+  );
+  console.log(singleTravelBundle);
   if (!singleTravelBundle) {
     return notFound();
   }
@@ -30,14 +34,14 @@ export default async function TravelBundlePage(props) {
       <div>
         <Image
           src={`/images/${singleTravelBundle.travelDestination}.jpeg`}
-          width={200}
-          height={200}
+          width={400}
+          height={300}
           alt={singleTravelBundle.travelDestination}
         />
         {singleTravelBundle.info} {singleTravelBundle.accessory} on a different
         perspective
-        <AddToCartButton />
       </div>
+      <AddProductToCart productId={props.params.travelBundleId} quantity={3} />
     </div>
   );
 }

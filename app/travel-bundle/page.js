@@ -1,21 +1,25 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTravelBundles } from '../../database/travel-bundles';
+import styles from '../travel-bundle/travelBundle.module.scss';
 
 export const metadata = {
   title: 'Travel bundle',
   description: 'Generate by create next app',
 };
-export default function travelBundlesPage() {
-  const travelBundles = getTravelBundles();
-
+export default async function travelBundlesPage() {
+  const travelBundles = await getTravelBundles();
+  console.log('travelBundles', travelBundles);
   return (
-    <div>
-      <h1>Travel bundles</h1>
+    <div className={styles.info}>
+      <h2>Travel bundles</h2>
 
       {travelBundles.map((travelBundle) => {
         return (
-          <div key={`travelBundle-div-${travelBundle.id}`}>
+          <div
+            className={styles.card}
+            key={`travelBundle-div-${travelBundle.id}`}
+          >
             <Link href={`/travel-bundle/${travelBundle.id}`}>
               {travelBundle.travelDestination}
             </Link>

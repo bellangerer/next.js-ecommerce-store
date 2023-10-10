@@ -1,0 +1,12 @@
+.remove-button {
+  background-color: #ff0000; // Red background color
+  color: #ffffff; // White text color
+  border: none; // Remove the button border
+  padding: 0.5rem 1rem; // Add padding for spacing
+  cursor: pointer; // Change cursor to a pointer on hover
+  border-radius: 4px; // Add rounded corners
+  transition: background-color 0.3s ease; // Add a smooth transition for background color change
+  &:hover {
+    background-color: #cc0000; // Change background color on hover
+  }
+}

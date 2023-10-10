@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import style from './AddToCartButton.module.scss';
 
 function AddToCartButton({ onClick }) {
   return (

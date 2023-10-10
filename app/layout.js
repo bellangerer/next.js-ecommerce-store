@@ -1,6 +1,6 @@
-import './globals.scss';
 import { Dela_Gothic_One } from 'next/font/google';
 import Link from 'next/link';
+import styles from './globals.scss';
 
 const inter = Dela_Gothic_One({ subsets: ['latin'], weight: '400' });
 
@@ -16,12 +16,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div>
-          <nav>
-            <Link href="/">Home</Link>
-            <Link href="/travel-bundle">Travel bundles</Link>
-            <Link href="/travel-xperience">TravelXperience</Link>
-            <Link href="/community">Community</Link>
+        <div className={styles.wrapper}>
+          <nav className={styles.navbar}>
+            <h2 className={styles.logo}>Roam the Globe</h2>
+            <ul className={styles.links}>
+              <li className={styles.nailing}>
+                <Link href="/">Home</Link>
+              </li>
+              <li className={styles.nailing}>
+                <Link href="/travel-bundle">Travel bundles</Link>
+              </li>
+              <li className={styles.nailing}>
+                <Link href="/travel-xperience">TravelXperience</Link>
+              </li>
+              <li className={styles.nailing}>
+                <Link href="/cart">Cart</Link>
+              </li>
+            </ul>
           </nav>
         </div>
 

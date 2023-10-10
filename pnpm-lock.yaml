@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
   next:
     specifier: latest
     version: 13.5.3(@babel/core@7.23.0)(react-dom@18.2.0)(react@18.2.0)(sass@1.68.0)
+  postgres:
+    specifier: ^3.4.0
+    version: 3.4.0
   react:
     specifier: latest
     version: 18.2.0
@@ -17,6 +23,9 @@ dependencies:
   sass:
     specifier: ^1.68.0
     version: 1.68.0
+  secure-json-parse:
+    specifier: ^2.7.0
+    version: 2.7.0
   sharp:
     specifier: ^0.32.6
     version: 0.32.6
@@ -1281,6 +1290,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /electron-to-chromium@1.4.532:
     resolution: {integrity: sha512-piIR0QFdIGKmOJTSNg5AwxZRNWQSXlRYycqDB9Srstx4lip8KpcmRxVP6zuFWExWziHYZpJ0acX7TxqX95KBpg==}
@@ -2974,6 +2988,10 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
+  /postgres@3.4.0:
+    resolution: {integrity: sha512-d7UtSoCg4hUtzxM9aRi3J8BrM6t0h4bQmgAHG96cDCNpP9CnnWQRdRl7WWNvKs0oOaQU2InGoOi1jETmdZK02g==}
+    dev: false
+
   /prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
     engines: {node: '>=10'}
@@ -3258,6 +3276,10 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /secure-json-parse@2.7.0:
+    resolution: {integrity: sha512-6aU+Rwsezw7VR8/nyvKTx8QpWH9FrcYiXXlqC4z5d5XQBDRqtbfsRjnwGyqbi3gddNtWHuEk9OANUotL26qKUw==}
     dev: false
 
   /semver@5.7.2:

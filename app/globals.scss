@@ -4,8 +4,7 @@
 *::before,
 *::after {
   margin: 0;
-  padding: 30;
-  box-sizing: border-box;
+  padding: 0;
 }
 
 body {
@@ -13,15 +12,14 @@ body {
   font-family: 'Dela Gothic One', cursive;
   margin: 0;
   padding: 0;
-  border-bottom-color: #815454;
 
   nav {
     width: auto;
     height: auto;
     background: #ede9db;
-    display: block;
-    justify-content: baseline;
-    align-items: center;
+    //display: block;
+    /* justify-content: baseline;
+    align-items: justify; */
     padding: 10px 0;
   }
   > div a {
@@ -45,4 +43,31 @@ html {
   max-width: 1700px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.links {
+  display: flex;
+}
+.nailing {
+  list-style: none;
+  margin: 0 0.75rem;
+  text-transform: uppercase;
+}
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
