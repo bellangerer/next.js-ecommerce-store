@@ -1,5 +1,5 @@
 import postgres from 'postgres';
-import { setEnvironmentVariables } from '../util/config';
+import { setEnvironmentVariables } from '../util/config.mjs';
 
 /* export function setEnvironmentVariables() {
   // Replacement for unmaintained dotenv-safe package

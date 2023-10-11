@@ -1,6 +1,7 @@
 import 'server-only';
 import { cache } from 'react';
 import { sql } from '../database/connect';
+import { TravelBundle } from '../migrations/00000-createTableTravelBundle';
 
 /* const travelBundles1 = [
   {
@@ -26,13 +27,6 @@ import { sql } from '../database/connect';
     price: 400,
   },
 ]; */
-
-type TravelBundle = {
-  id: number;
-  travelDestination: string;
-  info: string;
-  price: number | null;
-};
 
 export const getTravelBundles = cache(async () => {
   // return travelBundles;
