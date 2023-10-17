@@ -1,7 +1,8 @@
 import { cookies } from 'next/headers';
 
 export function getCookie(name) {
-  return cookies().get(name)?.value;
+  const cart = cookies().get(name)?.value;
+  return cart ? cart : [];
 }
 
 export function setCookie(productId, quantity) {

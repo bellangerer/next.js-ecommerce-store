@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getTravelBundleById } from '../../../database/travel-bundles';
+import style from '../[travelBundleId]/page.module.scss';
 import { AddProductToCart } from './AddToCart';
 
 export async function generateMetadata({ params }) {
@@ -28,20 +29,23 @@ export default async function TravelBundlePage(props) {
   }
 
   return (
-    <div>
-      This is the single product page
-      <h1>{singleTravelBundle.travelDestination}</h1>
-      <div>
+    <div className={style.singleProduct}>
+      <div className={style.productName}>
+        <h1>{singleTravelBundle.travelDestination}</h1>
+      </div>
+
+      <div className={style.container}>
         <Image
           src={`/images/${singleTravelBundle.travelDestination}.jpeg`}
           width={400}
           height={300}
           alt={singleTravelBundle.travelDestination}
+          className={style.image}
         />
         {singleTravelBundle.info} {singleTravelBundle.accessory} on a different
         perspective
       </div>
-      <AddProductToCart productId={props.params.travelBundleId} quantity={3} />
+      <AddProductToCart productId={props.params.travelBundleId} />
     </div>
   );
 }

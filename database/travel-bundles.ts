@@ -49,6 +49,40 @@ export const getTravelBundleById = cache(async (id: number) => {
   return travelBundle;
 });
 
+export const createTableTravelBundle = cache(
+  async (travelDestination: string, info: string, price: number) => {
+    const [travelBundle] = await sql<TravelBundle[]>`
+  INSERT INTO travelBundles
+  (travel_destination, info, price)
+  VALUES
+  (${travelDestination}, ${info}, ${price})
+  RETURNING *
+  `;
+    return travelBundle;
+  },
+);
+
+export const updateTravelBundlebyId = cache(
+  async (
+    id: number,
+    travelDestination: string,
+    info: string,
+    price: number,
+  ) => {
+    const [travelBundle] = await sql<TravelBundle[]>`
+  UPDATE
+    travelBundles
+  SET
+    travelDestination = ${travelDestination},
+    info = ${info},
+    price = ${price}
+    WHERE id= ${id}
+    RETURNING *
+  `;
+    return travelBundle;
+  },
+);
+
 /* export function getTravelBundle(id: number) {
   return travelBundles1.find((travelBundle) => travelBundle.id === id);
 } */

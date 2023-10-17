@@ -1,6 +1,6 @@
 import { Sql } from 'postgres';
 
-/* const travelBundles1 = [
+const travelBundles = [
   {
     id: 1,
     travelDestination: 'Japan',
@@ -23,22 +23,22 @@ import { Sql } from 'postgres';
     info: 'Experience New York',
     price: 400,
   },
-]; */
+];
 
 export async function up(sql: Sql) {
-  for (const travel_bundle of travel_bundles)
+  for (const travelBundle of travelBundles)
     await sql`
   INSERT INTO travel_bundle
-  (travelDestination, info, price)
+  (travel_destination, info, price)
   VALUES
-  (${travel_bundle.travelDestination}, ${travel_bundle.info}, ${travel_bundle.price},)
+  (${travelBundle.travelDestination}, ${travelBundle.info}, ${travelBundle.price})
   `;
 }
 
 export async function down(sql: Sql) {
-  for (const travel_bundle of travel_bundles)
+  for (const travelBundle of travelBundles)
     await sql`
-    DELETE FROM travelBundles WHERE id = ${travel_bundle.id}
+    DELETE FROM travel_bundle WHERE id = ${travelBundle.id}
 
   `;
 }

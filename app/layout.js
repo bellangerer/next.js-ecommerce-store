@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className={styles.wrapper}>
           <nav className={styles.navbar}>
-            <h2 className={styles.logo}>Roam the Globe</h2>
+            <h1 className={styles.logo}>Roam the Globe</h1>
             <ul className={styles.links}>
               <li className={styles.nailing}>
                 <Link href="/">Home</Link>
